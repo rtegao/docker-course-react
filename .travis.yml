@@ -1,0 +1,17 @@
+language: generic
+
+sudo: required
+services:
+  - docker 
+
+before_install:
+  - docker build -t tegao/docker-course-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CLI=true tegao/docker-course-react npm run test   
+
+
+
+
+
+
